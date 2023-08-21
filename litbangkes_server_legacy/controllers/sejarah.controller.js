@@ -2,7 +2,7 @@ const db = require("../models");
 const Sejarah = db.sejarah;
 
 exports.getSejarah = async (req, res) => {
-  Sejarah.findAll()
+  Sejarah.findAll({ attributes: ["id", "year", "textarea"] })
     .then((data) => res.send(data))
     .catch((err) =>
       res.status(500).send({

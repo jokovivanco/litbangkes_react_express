@@ -2,7 +2,9 @@ const db = require("../models");
 const Tupoksi = db.tupoksi;
 
 exports.getTupoksi = async (req, res) => {
-  Tupoksi.findAll()
+  Tupoksi.findAll({
+    attributes: ["id", "textarea", "title"],
+  })
     .then((data) => res.send(data))
     .catch((err) =>
       res.status(500).send({

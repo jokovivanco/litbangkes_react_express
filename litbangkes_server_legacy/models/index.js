@@ -17,10 +17,6 @@ db.mission = require("./mission.model.js")(sequelize, Sequelize, DataTypes);
 db.sejarah = require("./sejarah.model.js")(sequelize, Sequelize, DataTypes);
 db.tupoksi = require("./tupoksi.model.js")(sequelize, Sequelize, DataTypes);
 db.vission = require("./vission.model.js")(sequelize, Sequelize, DataTypes);
-db.strukturOrganisasi = require("./struktur-organisasi.model.js")(
-  sequelize,
-  Sequelize,
-  DataTypes
-);
+db.files = require("./files.model.js")(sequelize, Sequelize, DataTypes);
 
 module.exports = db;

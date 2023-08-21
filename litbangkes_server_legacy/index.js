@@ -17,8 +17,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(
-  "/resources/static/assets/uploads/",
-  express.static("./resources/static/assets/uploads/")
+  "/resources/static/assets/images/",
+  express.static("./resources/static/assets/images/")
+);
+
+app.use(
+  "/resources/static/assets/files/",
+  express.static("./resources/static/assets/files/")
 );
 
 const db = require("./models");
@@ -33,14 +38,14 @@ db.sequelize
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+  res.json({ message: "Welcome to application." });
 });
 
 require("./routes/mission.route")(app);
 require("./routes/sejarah.route")(app);
 require("./routes/tupoksi.route")(app);
 require("./routes/vission.route")(app);
-require("./routes/struktur-organisasi.route")(app);
+require("./routes/upload-file.route")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 30000;

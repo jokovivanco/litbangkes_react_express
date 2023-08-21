@@ -58,7 +58,7 @@ exports.updateMission = async (req, res) => {
 
 exports.deleteMission = async (req, res) => {
   const id = req.params.id;
-  Mission.destroy({ where: { id } })
+  Mission.destroy({ where: { id }, attributes: ["id", "text"] })
     .then((num) => {
       if (num == 1) {
         res.send({

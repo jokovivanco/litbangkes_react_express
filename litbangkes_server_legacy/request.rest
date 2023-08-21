@@ -1,9 +1,1 @@
-POST http://localhost:30000/api/mission
-Content-Type: application/json
-
-{
-    "id": "any id",
-    "text": "a text",
-    "vissionId": 1
-
-}
+GET http://localhost:30000/api/files/zona-integritas
